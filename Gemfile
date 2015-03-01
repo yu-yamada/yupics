@@ -49,3 +49,6 @@ end
 
 gem "carrierwave"
 gem "rmagick"
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
