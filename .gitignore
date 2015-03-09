@@ -12,5 +12,6 @@
 !/log/.keep
 /tmp
 public/uploads
+public/assets
 tmp
 logs
