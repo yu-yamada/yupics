@@ -1,11 +1,24 @@
 class PhotosController < ApplicationController
+  require 'date'
+
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   # GET /photos
   # GET /photos.json
   def index
     #@photos = Photo.all
-    @photos = Photo.order("date")
+
+    s_m = Date.today.strftime("%Y-%m")
+    unless params[:show_month].nil?
+      s_m = params[:show_month]['show_month(1i)'] + "-" +
+        sprintf("%02d", params[:show_month]['show_month(2i)'])
+    end
+
+    @photos = Photo.where("to_char(date,'yyyy-mm') like ?", "#{s_m}%").order("date")
+
+    @year = s_m.split("-")[0].to_i
+    @month = s_m.split("-")[1].to_i
+
   end
 
   # GET /photos/1

@@ -52,3 +52,5 @@ gem "rmagick"
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails'

@@ -1,6 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1>YUPICS</h1>
+<%= form_tag({:action => 'index'},{:method => 'GET'})  do %>
+  <div class="field">
+    <br>
+    <%= date_select "show_month",
+     :show_month,:discard_day => true,
+     :use_two_digit_numbers => true, 
+     :add_month_numbers => true,
+     :default => Date.new(@year, @month, 1) %>
+     <%= submit_tag "検索" %>
+  </div>
+<% end %>
 
 <table class="table table-striped">
   <thead>
